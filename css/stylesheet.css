@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+  /* --- Primary --- */
+
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+
+  /* --- Neutral --- */
+
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+  /* --- Gradients --- */
+  --gradient: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradient2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 62.5%;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  background: var(--gradient);
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+span {
+  display: inline;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.brand {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 100%;
+  max-width: 10.3rem;
+}
+
+.content {
+  margin-top: 5.7rem;
+}
+
+.title {
+  line-height: 3.8rem;
+  letter-spacing: 11px;
+  color: var(--Dark-Grayish-Red);
+}
+
+.light-title {
+  font-weight: 300;
+  color: var(--Desaturated-Red);
+}
+
+.description {
+  line-height: 2.2rem;
+  letter-spacing: 0.5px;
+  margin-top: 2.5rem;
+  margin-bottom: 3.5rem;
+  color: var(--Desaturated-Red);
+}
+
+.form {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: 9.2rem;
+  border-radius: 5rem;
+  outline: 1px solid #d9c9cc;
+}
+
+.email {
+  padding: 1.5rem 2rem;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  font-size: 1.4rem;
+  font-family: "Josefin Sans", sans-serif;
+  background: transparent;
+  color: var(--Dark-Grayish-Red);
+}
+
+.email::placeholder {
+  color: var(--Desaturated-Red);
+  opacity: 0.75;
+}
+
+.btn {
+  border: 0;
+  outline: 0;
+  padding: 1.5rem 2.5rem;
+  border-radius: 3rem;
+  position: relative;
+  box-shadow: 0 1.5rem 1.5rem 0 rgba(50, 0, 0, 0.1);
+}
+
+.btn::before {
+  content: "";
+  background: url("../images/icon-arrow.svg") no-repeat center center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.submit {
+  background: var(--gradient2);
+  width: 100%;
+  max-width: 6.35rem;
+}
+
+.invalid {
+  outline: 1px solid var(--Soft-Red);
+  position: relative;
+}
+
+.invalid .email {
+  content: "";
+  display: block;
+  background-image: url("../images/icon-error.svg");
+  background-repeat: no-repeat;
+  background-position: right 3% center;
+}
+
+.invalid::after {
+  content: "Please provide valid email";
+  color: var(--Soft-Red);
+  display: block;
+  font-size: 1.2rem;
+  position: absolute;
+  margin-top: 0.5rem;
+  left: 3rem;
+  bottom: -3rem;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    background: url("../images/bg-pattern-desktop.svg"), var(--gradient);
+    background-position: top left;
+  }
+
+  h1 {
+    font-size: 6.3rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      " . logo image"
+      " . content image";
+  }
+
+  .navbar {
+    grid-area: logo;
+  }
+
+  .brand {
+    max-width: 15rem;
+    padding-top: 6.15rem;
+    padding-bottom: 6rem;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 57.5rem;
+    grid-area: image;
+    margin-left: auto;
+  }
+
+  .image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .container {
+    text-align: left;
+    padding-left: 2rem;
+    padding-right: 0;
+  }
+
+  .content {
+    grid-area: content;
+    margin-top: 0;
+    margin-right: 3rem;
+    padding-top: 7rem;
+    padding-bottom: 15.3rem;
+    width: 100%;
+    max-width: 47.5rem;
+  }
+
+  .title {
+    line-height: 6.8rem;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+  }
+
+  .light-title {
+    font-weight: 300;
+  }
+
+  .description {
+    line-height: 3rem;
+    letter-spacing: 0.5px;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .form {
+    margin-bottom: 0;
+  }
+
+  .email {
+    font-size: 1.6rem;
+    padding: 1.8rem 3rem;
+  }
+
+  .submit {
+    max-width: 10rem;
+  }
+
+  .submit:hover {
+    opacity: 0.7;
+    box-shadow: 0 1rem 1.5rem 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+}
